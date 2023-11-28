@@ -1,0 +1,14 @@
+{
+    "db" : {
+        
+        "database" : "e-commerce",
+        "password" : "amiamijan",
+         "host" : "localhost",
+         "username" : "postgres",
+         "port" :  5432,
+         "dialect" : "postgres",
+         "logging" : false
+
+
+    }
+}
