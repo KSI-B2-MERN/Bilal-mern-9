@@ -1,4 +1,4 @@
-const database = require('../../bin/dbconnection');
+
 const sequelize = require('../../bin/dbconnection');
 
 const {Model,DataTypes} = require('sequelize')
@@ -9,6 +9,7 @@ class Orders extends Model{}
 Orders.init({
 
     orderID : {
+        primaryKey : true,
         type : DataTypes.STRING(),
         primaryKey : true
     },
@@ -16,7 +17,22 @@ Orders.init({
         type : DataTypes.DATE(),
         defaultValue : DataTypes.NOW,
         allowNull : false
-    }
+    },
+    totalAmount : {
+        type : DataTypes.STRING(90),
+        allowNull : false
+    },
+    shippingStatus : {
+        type : DataTypes.STRING(90),
+        allowNull : false, 
+        defaultValue  : "pending"
+    },
+    paymentStatus : {
+        type : DataTypes.STRING(90),
+        allowNull : false,
+        defaultValue  : "pending"
+    },
+
 
 },{
     sequelize,

@@ -2,38 +2,36 @@ const sequelize = require ('../../bin/dbconnection')
 
 const {Model,DataTypes} = require('sequelize')
 
-class Product extends Model {}
+class Variations extends Model {}
 
-Product.init({
-    ProductId : {
+Variations.init({
+    VariationsId : {
         primaryKey :true,
-        type : DataTypes.STRING(34),
+        type : DataTypes.INTEGER,
         
         primaryKey : true
 
     },
-    productName : {
+    VariationsSize : {
+        type : DataTypes.STRING,
+         allowNull : false
+    },
+    VariationsQuantity : {
         type : DataTypes.STRING(90),
          allowNull : false
     },
-    productPrice : {
-        type : DataTypes.STRING(90),
-         allowNull : false
-    },
-    productDescription : {
+    VariationsWeight : {
         type : DataTypes.STRING(90),
          allowNull : false
     },
 
-    stockQuantity : {
-        type : DataTypes.STRING(2000)
-    }
+    
 
 },{
     sequelize,
     timestamps : true,
     paranoid : true,
-    modelName : "Product"
+    modelName : "Variations"
 });
 
-module.exports = Product
+module.exports = Variations
