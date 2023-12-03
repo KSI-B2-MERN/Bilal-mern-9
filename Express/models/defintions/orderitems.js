@@ -4,17 +4,17 @@ const sequelize = require('../../bin/dbconnection');
 const {Model,DataTypes} = require('sequelize')
 
 
-class Orders extends Model{}
+class OrderItems extends Model{}
 
-Orders.init({
+OrderItems.init({
 
-    orderID : {
+    OrderItemsId : {
         primaryKey : true,
         type : DataTypes.STRING(),
         
     },
    
-    orderItemPrice : {
+    OrderItemsQuantity : {
         type : DataTypes.STRING,
         allowNull : false
     },
@@ -34,7 +34,7 @@ Orders.init({
     sequelize,
     timestamps : true,
     paranoid : true,
-    modelName : "Orders"
+    modelName : "OrdersItems"
 
 })
-module.exports = Orders;
+module.exports = OrderItems;

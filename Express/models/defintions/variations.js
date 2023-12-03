@@ -7,23 +7,20 @@ class Variations extends Model {}
 Variations.init({
     VariationsId : {
         primaryKey :true,
-        type : DataTypes.INTEGER,
+        type : DataTypes.STRING(90),
         
         primaryKey : true
 
     },
-    VariationsSize : {
-        type : DataTypes.STRING,
+    VariationsPrice : {
+        type : DataTypes.STRING(90),
          allowNull : false
     },
     VariationsQuantity : {
         type : DataTypes.STRING(90),
          allowNull : false
     },
-    VariationsWeight : {
-        type : DataTypes.STRING(90),
-         allowNull : false
-    },
+   
 
     
 

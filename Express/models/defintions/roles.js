@@ -1,5 +1,6 @@
-const { Model, DataTypes } = require('sequelize');
+
 const sequelize = require('../../bin/dbconnection');
+const { Model, DataTypes } = require('sequelize');
 
 class Roles extends Model {}
 
@@ -8,10 +9,9 @@ Roles.init(
     roleId: {
       primaryKey: true,
       type: DataTypes.STRING(90),
-      autoIncrement: true,
-      allowNull: false,
+      
     },
-    name: {
+    role: {
       type: DataTypes.STRING(90),
       allowNull: false,
     
@@ -19,8 +19,9 @@ Roles.init(
   },
   {
     sequelize,
-    timestamps: false,
-    modelName: 'Roles',
+    timestamps: true,
+    paranoid : true,
+    modelName: 'Role',
   }
 );
 module.exports = Roles

@@ -7,6 +7,8 @@ var logger = require('morgan');
 
 var productRouter = require('./routes/productRouters')
 
+var roleRouter = require('./routes/roleRouter')
+
 
 
 
@@ -30,6 +32,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //routes
 
 app.use('/product',productRouter)
+
+app.use('/role',roleRouter)
 
 
 

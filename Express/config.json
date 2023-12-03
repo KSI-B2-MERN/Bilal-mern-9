@@ -2,7 +2,7 @@
     "db" : {
         
         "database" : "e-commerce",
-        "password" : "amiamijan",
+        "password" : "starter123",
          "host" : "localhost",
          "username" : "postgres",
          "port" :  5432,

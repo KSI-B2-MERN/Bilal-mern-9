@@ -9,26 +9,20 @@ Product.init({
         primaryKey :true,
         type : DataTypes.STRING(34),
         
-        primaryKey : true
+      
 
     },
     productName : {
         type : DataTypes.STRING(90),
          allowNull : false
     },
-    productPrice : {
-        type : DataTypes.STRING(90),
-         allowNull : false
-    },
+ 
     productDescription : {
         type : DataTypes.STRING(90),
          allowNull : false
     },
 
-    stockQuantity : {
-        type : DataTypes.STRING(2000)
-    }
-
+  
 },{
     sequelize,
     timestamps : true,

@@ -9,14 +9,11 @@ Cart.init ({
 
     cartId : {
         primaryKey : true,
-        type : DataTypes.INTEGER
+        type : DataTypes.STRING(90)
     },
 
 
-   quantity : {
-      type : DataTypes.INTEGER,
-      allowNull : false
-   }
+  
 
 },{
     sequelize,

@@ -30,7 +30,7 @@ Users.init(
     sequelize,
     timestamps: true,
     paranoid: true,
-    modelName: "userssssss",
+    modelName: "Users",
 })
 
 module.exports = Users;
