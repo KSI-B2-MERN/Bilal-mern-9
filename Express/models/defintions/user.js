@@ -11,20 +11,20 @@ Users.init(
         },
         firstName: {
             type: DataTypes.STRING(34),
-            allowNull: false,
+           
         },
         lastName: {
             type: DataTypes.STRING(34),
-            allowNull: false,
+            
         },
         email: {
             type: DataTypes.STRING(34),
-            allowNull: false,
+            
             unique: true,
         },
         password: {
             type: DataTypes.STRING(34),
-            allowNull: false,
+           
         },
     }, {
     sequelize,

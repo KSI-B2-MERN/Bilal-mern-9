@@ -8,17 +8,17 @@ const OrderItems = require('./defintions/orderitems');
 const Roles = require('./defintions/roles');
 const Variations = require('./defintions/variations');
 
-const models = [Users,Product,Orders,Variations,Roles,Cart,CartItems,OrderItems];
+const models = {Users,Product,Orders,Variations,Roles,Cart,CartItems,OrderItems};
 
 const db = {};
 
 
-//1:1
+
 Users.hasOne(Cart,{foreignKey :"userId"})
 Cart.belongsTo(Users,{foreignKey : "userId"})
 
 
-//1:N
+
 
 Users.hasMany(Roles,{foreignKey : "userId"})
 Roles.belongsTo(Users , {foreignKey : "userId"})

@@ -1,27 +1,32 @@
 const roleService = require('../services/roleService');
+const joi = require("joi");
+
+const roleSchema = joi.object().keys({
+    role: joi.string().required(),
+    
+})
 
 module.exports = {
+    createRole: async (req, res) => {
 
-    createRole  :  async(req,res)=> {
         try {
-
-            const createRole =  await roleService.createRole(req.body)
+            const validate = await roleSchema.validateAsync(req.body);
+            const createRole = await roleService.createRole(validate);
             if (createRole.error) {
-
-                return res.send({response : createRole.error})
-                
+                res.send({
+                    error: createRole.error
+                })
             }
-            return res.send( {
-                response : createRole.response
-
+            else {
+                res.send({
+                    response: createRole.response
+                })
+            }
+        }
+        catch (err) {
+            res.send({
+                error: err.message
             })
-           
-            
-        } catch (error) {
-            return {
-                reposnse : error.message
-            }
-            
         }
     }
 }
